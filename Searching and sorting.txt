@@ -1,0 +1,44 @@
+const matchedProperties =
+    properties.filter(
+        function(property) {
+
+            return (
+
+                property.name
+                .toLowerCase()
+                .includes(searchText)
+
+                ||
+
+                property.price
+                .toLowerCase()
+                .includes(searchText)
+
+                ||
+
+                property.area
+                .toLowerCase()
+                .includes(searchText)
+
+                ||
+
+                property.location
+                .toLowerCase()
+                .includes(searchText)
+
+                ||
+
+                property.phone
+                .toLowerCase()
+                .includes(searchText)
+
+                ||
+
+                property.email
+                .toLowerCase()
+                .includes(searchText)
+
+            );
+
+        }
+    );
