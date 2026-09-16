@@ -1,8 +1,12 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-
-    <title>AI Property Analysis</title>
+    <header>
+    
+    <img src="WhatsApp Image 2026-09-17 at 2.18.36 AM.jpeg" length="100" width="100">
+    </header>
+    <title>Property Time Machine</title>
 
     <style>
 
@@ -18,129 +22,156 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: auto;
-            padding: 35px;
+            padding: 40px;
         }
 
-        .title {
+        .heading {
             text-align: center;
         }
 
-        .title h1 {
+        .heading h1 {
+            font-size: 48px;
             color: #62ff9b;
-            font-size: 42px;
         }
 
-        .title p {
+        .heading p {
             color: #91a99a;
-        }
-
-        .property {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-top: 35px;
         }
 
         .card {
             background: #102218;
             border: 1px solid #21472e;
             border-radius: 20px;
-            padding: 25px;
+            padding: 30px;
+            margin-top: 30px;
         }
 
-        .property-image {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        .property-name {
-            font-size: 30px;
-            margin-top: 20px;
-        }
-
-        .location {
-            color: #91a99a;
-        }
-
-        .score {
+        .year {
             text-align: center;
-        }
-
-        .score-number {
-            font-size: 85px;
+            font-size: 65px;
             color: #62ff9b;
             font-weight: bold;
         }
 
-        .score-label {
+        input[type="range"] {
+            width: 100%;
+            margin: 30px 0;
+        }
+
+        .value {
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .change {
+            text-align: center;
+            color: #62ff9b;
             font-size: 20px;
-            color: #a6b8ac;
+            margin-top: 10px;
         }
 
-        .bar-row {
-            margin: 20px 0;
-        }
-
-        .bar-title {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 7px;
-        }
-
-        .bar {
-            height: 10px;
-            background: #20372a;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .fill {
-            height: 100%;
-            background: #62ff9b;
-            border-radius: 10px;
-        }
-
-        .forecast {
+        .scenario-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 15px;
             margin-top: 25px;
+        }
+
+        .scenario {
+
+            padding: 20px;
+
+            background: #07140d;
+
+            border: 1px solid #365541;
+
+            border-radius: 12px;
+
             text-align: center;
-        }
 
-        .forecast-value {
-            font-size: 45px;
-            color: #62ff9b;
-            font-weight: bold;
-        }
-
-        .future-button {
-            width: 100%;
-            padding: 16px;
-            margin-top: 25px;
-            border: none;
-            border-radius: 10px;
-            background: #62ff9b;
-            font-size: 18px;
-            font-weight: bold;
             cursor: pointer;
+
+            font-size: 16px;
         }
 
-        .risk {
+        .scenario:hover {
+
+            border-color: #62ff9b;
+
+            transform: translateY(-3px);
+
+        }
+
+        .scenario.active {
+
+            background: #173923;
+
+            border-color: #62ff9b;
+
+        }
+
+        .impact {
+
             margin-top: 25px;
+
+            text-align: center;
+
         }
 
-        .risk-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #20372a;
+        .impact-value {
+
+            font-size: 38px;
+
+            color: #62ff9b;
+
+            font-weight: bold;
+
         }
 
-        @media(max-width:800px) {
+        .simulator {
 
-            .property {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 25px;
+
+        }
+
+        .metric {
+
+            padding: 20px;
+
+            background: #07140d;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+        }
+
+        .metric-number {
+
+            font-size: 32px;
+
+            color: #62ff9b;
+
+            font-weight: bold;
+
+        }
+
+        @media(max-width:700px) {
+
+            .scenario-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .simulator {
                 grid-template-columns: 1fr;
             }
 
@@ -157,194 +188,198 @@
 <div class="container">
 
 
-    <div class="title">
+    <div class="heading">
 
         <h1>
-             AI PROPERTY INTELLIGENCE
+            PROPERTY TIME MACHINE
         </h1>
 
         <p>
-            Turning today's property data into tomorrow's possibilities.
+            Explore how your property's projected
+            value changes across time.
         </p>
 
     </div>
 
 
-    <div class="property">
+    <!-- TIME MACHINE -->
 
+    <div class="card">
 
-        <!-- PROPERTY -->
-
-        <div class="card">
-
-            <img
-                id="propertyImage"
-                class="property-image"
-            >
-
-            <div
-                id="propertyName"
-                class="property-name">
-            </div>
-
-            <div
-                id="propertyLocation"
-                class="location">
-            </div>
-
-            <h3>
-                Current Value
-            </h3>
-
-            <div
-                id="currentPrice"
-                style="font-size:28px;">
-            </div>
-
+        <div
+            id="year"
+            class="year">
+            2026
         </div>
 
 
-        <!-- AI SCORE -->
-
-        <div class="card score">
-
-            <div class="score-label">
-                AI FUTURE POTENTIAL
-            </div>
-
-            <div
-                id="score"
-                class="score-number">
-                --
-            </div>
-
-            <div class="score-label">
-                / 100
-            </div>
+        <input
+            type="range"
+            id="yearSlider"
+            min="2026"
+            max="2035"
+            value="2026"
+            oninput="updateFuture()"
+        >
 
 
-            <div class="bar-row">
-
-                <div class="bar-title">
-                    <span>Price Growth</span>
-                    <span id="growthScore"></span>
-                </div>
-
-                <div class="bar">
-                    <div
-                        id="growthBar"
-                        class="fill">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-title">
-                    <span>Connectivity</span>
-                    <span id="connectivityScore"></span>
-                </div>
-
-                <div class="bar">
-                    <div
-                        id="connectivityBar"
-                        class="fill">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-title">
-                    <span>Infrastructure</span>
-                    <span id="infraScore"></span>
-                </div>
-
-                <div class="bar">
-                    <div
-                        id="infraBar"
-                        class="fill">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-title">
-                    <span>Demand</span>
-                    <span id="demandScore"></span>
-                </div>
-
-                <div class="bar">
-                    <div
-                        id="demandBar"
-                        class="fill">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="forecast">
-
-                <div>
-                    PROJECTED 2030 VALUE
-                </div>
-
-                <div
-                    id="forecastValue"
-                    class="forecast-value">
-                </div>
-
-            </div>
-
-
-            <button
-                class="future-button"
-                onclick="goFuture()">
-
-                EXPLORE THE FUTURE →
-
-            </button>
-
+        <div
+            id="futureValue"
+            class="value">
         </div>
 
+
+        <div
+            id="percentage"
+            class="change">
+        </div>
 
     </div>
 
 
-    <!-- RISK -->
+    <!-- WHAT IF -->
 
-    <div class="card risk">
+    <div class="card">
 
         <h2>
-            ⚠ FUTURE RISK ANALYSIS
+            WHAT IF THE CITY CHANGES?
         </h2>
 
-        <div class="risk-item">
-            <span>Market Risk</span>
-            <span>MEDIUM</span>
+        <p style="color:#91a99a;">
+
+            Simulate possible infrastructure scenarios
+            and observe how the model's assumptions
+            affect the projection.
+
+        </p>
+
+
+        <div class="scenario-grid">
+
+
+            <div
+                class="scenario"
+                onclick="toggleScenario(this, 5)">
+
+                
+                <br><br>
+                New Metro
+
+            </div>
+
+
+            <div
+                class="scenario"
+                onclick="toggleScenario(this, 4)">
+
+                
+                <br><br>
+                New Highway
+
+            </div>
+
+
+            <div
+                class="scenario"
+                onclick="toggleScenario(this, 6)">
+
+                
+                <br><br>
+                IT Park
+
+            </div>
+
+
+            <div
+                class="scenario"
+                onclick="toggleScenario(this, 3)">
+
+                
+                <br><br>
+                University
+
+            </div>
+
+
+            <div
+                class="scenario"
+                onclick="toggleScenario(this, 2)">
+
+                
+                <br><br>
+                Major Hospital
+
+            </div>
+
+
+            <div
+                class="scenario"
+                onclick="toggleScenario(this, 5)">
+
+                
+                <br><br>
+                Airport Expansion
+
+            </div>
+
+
         </div>
 
-        <div class="risk-item">
-            <span>Infrastructure Risk</span>
-            <span>LOW</span>
+
+        <div class="impact">
+
+            Scenario-adjusted projection
+
+            <div
+                id="scenarioValue"
+                class="impact-value">
+            </div>
+
         </div>
 
-        <div class="risk-item">
-            <span>Demand Risk</span>
-            <span>LOW</span>
-        </div>
+    </div>
 
-        <div class="risk-item">
-            <span>Price Risk</span>
-            <span>MEDIUM</span>
+
+    <!-- INVESTMENT SIMULATOR -->
+
+    <div class="card">
+
+        <h2>
+            INVESTMENT SIMULATOR
+        </h2>
+
+
+        <div class="simulator">
+
+
+            <div class="metric">
+
+                <div>
+                    Current Property Value
+                </div>
+
+                <div
+                    id="current"
+                    class="metric-number">
+                </div>
+
+            </div>
+
+
+            <div class="metric">
+
+                <div>
+                    Projected 2035 Value
+                </div>
+
+                <div
+                    id="final"
+                    class="metric-number">
+                </div>
+
+            </div>
+
+
         </div>
 
     </div>
@@ -356,187 +391,166 @@
 <script>
 
 
-const price =
+const basePrice =
     Number(
-        localStorage.getItem("propertyPrice")
+        localStorage.getItem(
+            "basePrice"
+        )
     );
 
 
-const name =
-    localStorage.getItem("propertyName");
-
-
-const locationName =
-    localStorage.getItem("propertyLocation");
-
-
-const image =
-    localStorage.getItem("propertyImage");
-
-
-document.getElementById(
-    "propertyImage"
-).src = image;
-
-
-document.getElementById(
-    "propertyName"
-).innerText = name;
-
-
-document.getElementById(
-    "propertyLocation"
-).innerText =
-    "📍 " + locationName;
-
-
-document.getElementById(
-    "currentPrice"
-).innerText =
-    "₹" + price.toLocaleString("en-IN");
-
-
-/* ============================
-   DEMO FORECASTING ENGINE
-============================ */
-
-
-let growth =
-    10 + Math.random() * 8;
-
-
-let connectivity =
-    75 + Math.random() * 20;
-
-
-let infrastructure =
-    72 + Math.random() * 22;
-
-
-let demand =
-    70 + Math.random() * 25;
-
-
-/* Future score */
-
-let futureScore =
-    (
-        growth * 0.30 +
-        connectivity * 0.20 +
-        infrastructure * 0.20 +
-        demand * 0.30
+const growthRate =
+    Number(
+        localStorage.getItem(
+            "growthRate"
+        )
     );
 
 
-futureScore =
-    Math.round(futureScore);
+let scenarioBoost = 0;
 
 
 document.getElementById(
-    "score"
-).innerText =
-    futureScore;
-
-
-/* Bars */
-
-document.getElementById(
-    "growthScore"
-).innerText =
-    Math.round(growth) + "%";
-
-
-document.getElementById(
-    "connectivityScore"
-).innerText =
-    Math.round(connectivity) + "%";
-
-
-document.getElementById(
-    "infraScore"
-).innerText =
-    Math.round(infrastructure) + "%";
-
-
-document.getElementById(
-    "demandScore"
-).innerText =
-    Math.round(demand) + "%";
-
-
-document.getElementById(
-    "growthBar"
-).style.width =
-    growth + "%";
-
-
-document.getElementById(
-    "connectivityBar"
-).style.width =
-    connectivity + "%";
-
-
-document.getElementById(
-    "infraBar"
-).style.width =
-    infrastructure + "%";
-
-
-document.getElementById(
-    "demandBar"
-).style.width =
-    demand + "%";
-
-
-/* 2030 projection */
-
-let yearlyGrowth =
-    growth / 100;
-
-
-let projected2030 =
-    price *
-    Math.pow(
-        1 + yearlyGrowth,
-        4
-    );
-
-
-document.getElementById(
-    "forecastValue"
+    "current"
 ).innerText =
     "₹" +
-    Math.round(
-        projected2030
-    ).toLocaleString("en-IN");
+    basePrice.toLocaleString(
+        "en-IN"
+    );
 
 
-/* Save values for next page */
+function calculateValue(year) {
 
-localStorage.setItem(
-    "growthRate",
-    yearlyGrowth
-);
+    const years =
+        year - 2026;
 
+    const adjustedRate =
+        growthRate +
+        scenarioBoost / 100;
 
-localStorage.setItem(
-    "futureScore",
-    futureScore
-);
-
-
-localStorage.setItem(
-    "basePrice",
-    price
-);
-
-
-function goFuture() {
-
-    window.location.href =
-        "future.html";
+    return (
+        basePrice *
+        Math.pow(
+            1 + adjustedRate,
+            years
+        )
+    );
 
 }
+
+
+function updateFuture() {
+
+
+    const year =
+        Number(
+            document.getElementById(
+                "yearSlider"
+            ).value
+        );
+
+
+    document.getElementById(
+        "year"
+    ).innerText =
+        year;
+
+
+    const value =
+        calculateValue(year);
+
+
+    document.getElementById(
+        "futureValue"
+    ).innerText =
+        "₹" +
+        Math.round(value)
+        .toLocaleString(
+            "en-IN"
+        );
+
+
+    const percentage =
+        (
+            (value - basePrice)
+            / basePrice
+        ) * 100;
+
+
+    document.getElementById(
+        "percentage"
+    ).innerText =
+        "+" +
+        percentage.toFixed(1) +
+        "% projected change";
+
+
+    updateScenario();
+
+}
+
+
+function toggleScenario(
+    element,
+    boost
+) {
+
+
+    element.classList.toggle(
+        "active"
+    );
+
+
+    if (
+        element.classList.contains(
+            "active"
+        )
+    ) {
+
+        scenarioBoost += boost;
+
+    } else {
+
+        scenarioBoost -= boost;
+
+    }
+
+
+    updateScenario();
+
+}
+
+
+function updateScenario() {
+
+
+    const value =
+        calculateValue(2035);
+
+
+    document.getElementById(
+        "scenarioValue"
+    ).innerText =
+        "₹" +
+        Math.round(value)
+        .toLocaleString(
+            "en-IN"
+        );
+
+
+    document.getElementById(
+        "final"
+    ).innerText =
+        "₹" +
+        Math.round(value)
+        .toLocaleString(
+            "en-IN"
+        );
+
+}
+
+
+updateFuture();
 
 
 </script>
