@@ -1,8 +1,14 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+    <header>
+    
+    <img src="WhatsApp Image 2026-09-17 at 2.18.36 AM.jpeg" length="100" width="100">
 
-    <title>AI Property Analysis</title>
+    </header>
+
+    <title>MakeYourProfit - Property</title>
 
     <style>
 
@@ -12,136 +18,153 @@
 
         body {
             margin: 0;
-            background: #07140d;
-            color: white;
             font-family: Arial, sans-serif;
+            background: #061a12;
+            color: white;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 35px;
+        .header {
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .title {
-            text-align: center;
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8cffc1;
         }
 
-        .title h1 {
-            color: #62ff9b;
+        .tag {
+            color: #9bb8aa;
+            font-size: 14px;
+        }
+
+        .main {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .box {
+            width: 900px;
+            max-width: 95%;
+            background: #0c2a1e;
+            border: 1px solid #285c45;
+            border-radius: 25px;
+            padding: 45px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        h1 {
             font-size: 42px;
+            margin-top: 0;
+            margin-bottom: 10px;
         }
 
-        .title p {
-            color: #91a99a;
+        .subtitle {
+            color: #a9c9b8;
+            margin-bottom: 35px;
+            font-size: 17px;
         }
 
-        .property {
+        .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
-            margin-top: 35px;
         }
 
-        .card {
-            background: #102218;
-            border: 1px solid #21472e;
-            border-radius: 20px;
-            padding: 25px;
-        }
-
-        .property-image {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        .property-name {
-            font-size: 30px;
-            margin-top: 20px;
-        }
-
-        .location {
-            color: #91a99a;
-        }
-
-        .score {
-            text-align: center;
-        }
-
-        .score-number {
-            font-size: 85px;
-            color: #62ff9b;
-            font-weight: bold;
-        }
-
-        .score-label {
-            font-size: 20px;
-            color: #a6b8ac;
-        }
-
-        .bar-row {
-            margin: 20px 0;
-        }
-
-        .bar-title {
+        .field {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 7px;
+            flex-direction: column;
         }
 
-        .bar {
-            height: 10px;
-            background: #20372a;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .fill {
-            height: 100%;
-            background: #62ff9b;
-            border-radius: 10px;
-        }
-
-        .forecast {
-            margin-top: 25px;
-            text-align: center;
-        }
-
-        .forecast-value {
-            font-size: 45px;
-            color: #62ff9b;
+        label {
+            margin-bottom: 9px;
+            color: #bce8d0;
             font-weight: bold;
         }
 
-        .future-button {
-            width: 100%;
-            padding: 16px;
-            margin-top: 25px;
+        input {
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #376e56;
+            background: #071d15;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #8cffc1;
+        }
+
+        .upload {
+            grid-column: 1 / 3;
+        }
+
+        .upload-box {
+            border: 2px dashed #4b896c;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            background: #081f16;
+        }
+
+        .upload-box input {
             border: none;
-            border-radius: 10px;
-            background: #62ff9b;
-            font-size: 18px;
+            background: transparent;
+            width: 100%;
+        }
+
+        .button-area {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            padding: 17px 40px;
+            border-radius: 30px;
+            background: #8cffc1;
+            color: #062016;
+            font-size: 17px;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
         }
 
-        .risk {
-            margin-top: 25px;
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(140,255,193,0.4);
         }
 
-        .risk-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #20372a;
+        .note {
+            margin-top: 20px;
+            text-align: center;
+            color: #7fa593;
+            font-size: 13px;
         }
 
-        @media(max-width:800px) {
+        @media(max-width:700px) {
 
-            .property {
+            .form-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .upload {
+                grid-column: auto;
+            }
+
+            .box {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 32px;
             }
 
         }
@@ -154,392 +177,286 @@
 <body>
 
 
-<div class="container">
+    <!-- HEADER -->
 
+    <div class="header">
 
-    <div class="title">
-
-        <h1>
-             AI PROPERTY INTELLIGENCE
-        </h1>
-
-        <p>
-            Turning today's property data into tomorrow's possibilities.
-        </p>
-
-    </div>
-
-
-    <div class="property">
-
-
-        <!-- PROPERTY -->
-
-        <div class="card">
-
-            <img
-                id="propertyImage"
-                class="property-image"
-            >
-
-            <div
-                id="propertyName"
-                class="property-name">
-            </div>
-
-            <div
-                id="propertyLocation"
-                class="location">
-            </div>
-
-            <h3>
-                Current Value
-            </h3>
-
-            <div
-                id="currentPrice"
-                style="font-size:28px;">
-            </div>
-
+        <div class="logo">
+            MakeYourProfit
         </div>
 
-
-        <!-- AI SCORE -->
-
-        <div class="card score">
-
-            <div class="score-label">
-                AI FUTURE POTENTIAL
-            </div>
-
-            <div
-                id="score"
-                class="score-number">
-                --
-            </div>
-
-            <div class="score-label">
-                / 100
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-title">
-                    <span>Price Growth</span>
-                    <span id="growthScore"></span>
-                </div>
-
-                <div class="bar">
-                    <div
-                        id="growthBar"
-                        class="fill">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-title">
-                    <span>Connectivity</span>
-                    <span id="connectivityScore"></span>
-                </div>
-
-                <div class="bar">
-                    <div
-                        id="connectivityBar"
-                        class="fill">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-title">
-                    <span>Infrastructure</span>
-                    <span id="infraScore"></span>
-                </div>
-
-                <div class="bar">
-                    <div
-                        id="infraBar"
-                        class="fill">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-title">
-                    <span>Demand</span>
-                    <span id="demandScore"></span>
-                </div>
-
-                <div class="bar">
-                    <div
-                        id="demandBar"
-                        class="fill">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="forecast">
-
-                <div>
-                    PROJECTED 2030 VALUE
-                </div>
-
-                <div
-                    id="forecastValue"
-                    class="forecast-value">
-                </div>
-
-            </div>
-
-
-            <button
-                class="future-button"
-                onclick="goFuture()">
-
-                EXPLORE THE FUTURE →
-
-            </button>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- RISK -->
-
-    <div class="card risk">
-
-        <h2>
-            ⚠ FUTURE RISK ANALYSIS
-        </h2>
-
-        <div class="risk-item">
-            <span>Market Risk</span>
-            <span>MEDIUM</span>
-        </div>
-
-        <div class="risk-item">
-            <span>Infrastructure Risk</span>
-            <span>LOW</span>
-        </div>
-
-        <div class="risk-item">
-            <span>Demand Risk</span>
-            <span>LOW</span>
-        </div>
-
-        <div class="risk-item">
-            <span>Price Risk</span>
-            <span>MEDIUM</span>
+        <div class="tag">
+            REAL ESTATE • FUTURE INTELLIGENCE
         </div>
 
     </div>
 
 
-</div>
 
+    <!-- MAIN -->
 
-<script>
+    <div class="main">
 
+        <div class="box">
 
-const price =
-    Number(
-        localStorage.getItem("propertyPrice")
-    );
+            <h1>
+                Tell Us About Your Property.
+            </h1>
 
+            <div class="subtitle">
+                Enter the current details and let our system analyse
+                its future potential.
+            </div>
 
-const name =
-    localStorage.getItem("propertyName");
 
+            <div class="form-grid">
 
-const locationName =
-    localStorage.getItem("propertyLocation");
 
+                <!-- PROPERTY NAME -->
 
-const image =
-    localStorage.getItem("propertyImage");
+                <div class="field">
 
+                    <label>
+                        Property Name
+                    </label>
 
-document.getElementById(
-    "propertyImage"
-).src = image;
+                    <input
+                        type="text"
+                        id="propertyName"
+                        placeholder="Example: Green Valley Residency">
 
+                </div>
 
-document.getElementById(
-    "propertyName"
-).innerText = name;
 
 
-document.getElementById(
-    "propertyLocation"
-).innerText =
-    "📍 " + locationName;
+                <!-- LOCATION -->
 
+                <div class="field">
 
-document.getElementById(
-    "currentPrice"
-).innerText =
-    "₹" + price.toLocaleString("en-IN");
+                    <label>
+                        Location
+                    </label>
 
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Example: Gurugram">
 
-/* ============================
-   DEMO FORECASTING ENGINE
-============================ */
+                </div>
 
 
-let growth =
-    10 + Math.random() * 8;
 
+                <!-- PRICE -->
 
-let connectivity =
-    75 + Math.random() * 20;
+                <div class="field">
 
+                    <label>
+                        Current Property Price (₹)
+                    </label>
 
-let infrastructure =
-    72 + Math.random() * 22;
+                    <input
+                        type="number"
+                        id="price"
+                        placeholder="Example: 5000000">
 
+                </div>
 
-let demand =
-    70 + Math.random() * 25;
 
 
-/* Future score */
+                <!-- AREA -->
 
-let futureScore =
-    (
-        growth * 0.30 +
-        connectivity * 0.20 +
-        infrastructure * 0.20 +
-        demand * 0.30
-    );
+                <div class="field">
 
+                    <label>
+                        Area (sq.ft.)
+                    </label>
 
-futureScore =
-    Math.round(futureScore);
+                    <input
+                        type="number"
+                        id="area"
+                        placeholder="Example: 1200">
 
+                </div>
 
-document.getElementById(
-    "score"
-).innerText =
-    futureScore;
 
 
-/* Bars */
+                <!-- IMAGE -->
 
-document.getElementById(
-    "growthScore"
-).innerText =
-    Math.round(growth) + "%";
+                <div class="field upload">
 
+                    <label>
+                        Property Image
+                    </label>
 
-document.getElementById(
-    "connectivityScore"
-).innerText =
-    Math.round(connectivity) + "%";
+                    <div class="upload-box">
 
+                        <input
+                            type="file"
+                            id="propertyImage"
+                            accept="image/*">
 
-document.getElementById(
-    "infraScore"
-).innerText =
-    Math.round(infrastructure) + "%";
+                    </div>
 
+                </div>
 
-document.getElementById(
-    "demandScore"
-).innerText =
-    Math.round(demand) + "%";
 
+            </div>
 
-document.getElementById(
-    "growthBar"
-).style.width =
-    growth + "%";
 
 
-document.getElementById(
-    "connectivityBar"
-).style.width =
-    connectivity + "%";
+            <!-- BUTTON -->
 
+            <div class="button-area">
 
-document.getElementById(
-    "infraBar"
-).style.width =
-    infrastructure + "%";
+                <button onclick="analyseProperty()">
 
+                    ANALYSE MY PROPERTY →
 
-document.getElementById(
-    "demandBar"
-).style.width =
-    demand + "%";
+                </button>
 
+            </div>
 
-/* 2030 projection */
 
-let yearlyGrowth =
-    growth / 100;
+            <div class="note">
 
+                Your property data will be used to generate
+                a future potential analysis.
 
-let projected2030 =
-    price *
-    Math.pow(
-        1 + yearlyGrowth,
-        4
-    );
+            </div>
 
 
-document.getElementById(
-    "forecastValue"
-).innerText =
-    "₹" +
-    Math.round(
-        projected2030
-    ).toLocaleString("en-IN");
+        </div>
 
+    </div>
 
-/* Save values for next page */
 
-localStorage.setItem(
-    "growthRate",
-    yearlyGrowth
-);
 
+    <!-- JAVASCRIPT -->
 
-localStorage.setItem(
-    "futureScore",
-    futureScore
-);
+    <script>
 
+        function analyseProperty() {
 
-localStorage.setItem(
-    "basePrice",
-    price
-);
 
+            // Get values
 
-function goFuture() {
+            const name =
+                document.getElementById("propertyName").value.trim();
 
-    window.location.href =
-        "future.html";
+            const location =
+                document.getElementById("location").value.trim();
 
-}
+            const price =
+                document.getElementById("price").value.trim();
 
+            const area =
+                document.getElementById("area").value.trim();
 
-</script>
+            const image =
+                document.getElementById("propertyImage").files[0];
+
+
+
+            // Validation
+
+            if (name === "") {
+
+                alert("Please enter the property name.");
+
+                return;
+
+            }
+
+
+            if (location === "") {
+
+                alert("Please enter the property location.");
+
+                return;
+
+            }
+
+
+            if (price === "" || Number(price) <= 0) {
+
+                alert("Please enter a valid property price.");
+
+                return;
+
+            }
+
+
+            if (area === "" || Number(area) <= 0) {
+
+                alert("Please enter a valid area.");
+
+                return;
+
+            }
+
+
+
+            // Save property information
+
+            localStorage.setItem(
+                "propertyName",
+                name
+            );
+
+            localStorage.setItem(
+                "propertyLocation",
+                location
+            );
+
+            localStorage.setItem(
+                "propertyPrice",
+                price
+            );
+
+            localStorage.setItem(
+                "propertyArea",
+                area
+            );
+
+
+
+            // Save image
+
+            if (image) {
+
+                const reader =
+                    new FileReader();
+
+                reader.onload = function(event) {
+
+                    localStorage.setItem(
+                        "propertyImage",
+                        event.target.result
+                    );
+
+                    window.location.href =
+                        "analysis.html";
+
+                };
+
+                reader.readAsDataURL(image);
+
+            }
+
+            else {
+
+                localStorage.removeItem(
+                    "propertyImage"
+                );
+
+                window.location.href =
+                    "analysis.html";
+
+            }
+
+        }
+
+    </script>
 
 
 </body>
